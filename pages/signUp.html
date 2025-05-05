@@ -9,28 +9,47 @@
   <script src="../references/bootstrap.bundle.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <style>
     * {
       font-family: 'Space Mono', monospace;
     }
 
     .two_div_parent {
-      width: 90%;
+      display: none;
     }
 
-    .sign_up_divs {
-      min-height: 50vh;
-    }
+    @media only screen and (min-width: 901px) {
 
-    .signup_form {
-      min-height: 50vh;
+      .mobile_div_parent {
+        display: none;
+      }
+
+      .two_div_parent {
+        display: block;
+        width: 90%;
+      }
+
+      .sign_up_divs {
+        min-height: 50vh;
+      }
+
+      .signup_form {
+        min-height: 50vh;
+      }
+
     }
   </style>
 </head>
 
 <body>
   <div class="container-fluid bg-dark row text-white g-0 p-4 justify-content-center" style="height: 100vh;">
+  <!-- Mobile Part -->
+    <div class="bg-secondary rounded p-3 mobile_div_parent">
+
+    </div>
+  <!-- Desktop Part -->
     <div class="bg-secondary two_div_parent rounded p-4">
       <div class="row g-0">
         <div class="col-md-6 p-3 border-end sign_up_divs d-flex justify-content-center align-items-center">
