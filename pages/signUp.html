@@ -20,6 +20,10 @@
       display: none;
     }
 
+    .mobile_signup_form {
+      min-height: 50vh;
+    }
+
     @media only screen and (min-width: 901px) {
 
       .mobile_div_parent {
@@ -46,13 +50,27 @@
 <body>
   <div class="container-fluid bg-dark row text-white g-0 p-4 justify-content-center" style="height: 100vh;">
   <!-- Mobile Part -->
-    <div class="bg-secondary rounded p-3 mobile_div_parent">
-
+    <div class="bg-secondary rounded p-3 mobile_div_parent position-relative">
+      <div class="border-bottom p-3 text-white d-flex align-items-center position-relative">
+        <div class="me-auto">Back</div>
+        <div class="position-absolute start-50 translate-middle-x w-25">
+          <img src="../references/Small_scream.png" alt="Scream" class="rounded-circle border border-dark mx-auto d-block"
+          width="50%" />
+        </div>
+        <div class="ms-auto">Log in</div>
+      </div>
+      <form class="bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around">
+        <div class="d-flex flex-column">
+          <input type="text" placeholder="Email or Username..." class="m-2" />
+          <input type="password" placeholder="Password..." class="m-2" />
+        </div>
+        <input type="submit" value="Sign in" class="m-2">
+      </form>
     </div>
   <!-- Desktop Part -->
     <div class="bg-secondary two_div_parent rounded p-4">
       <div class="row g-0">
-        <div class="col-md-6 p-3 border-end sign_up_divs d-flex justify-content-center align-items-center">
+        <div class="col-md-6 p-3 border-end sign_up_divs d-flex justify-content-center">
           <div class="w-100 p-5 d-flex align-items-center gap-3">
             <img src="../references/Small_scream.png" alt="Scream" class="rounded-circle border border-dark"
               width="40%" />
