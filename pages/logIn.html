@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LogIn</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../references/bootstrap.min.css" rel="stylesheet">
+    <script src="../references/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+        font-family: 'Space Mono', monospace;
+    }
+
+    .two_div_parent {
+        display: none;
+    }
+
+    .mobile_signup_form {
+        min-height: 40vh;
+    }
+
+    @media only screen and (min-width: 901px) {
+
+        .mobile_div_parent {
+            display: none;
+        }
+
+        .two_div_parent {
+            display: block;
+            width: 90%;
+        }
+
+        .sign_up_divs {
+            min-height: 50vh;
+        }
+
+        .signup_form {
+            min-height: 50vh;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-fluid bg-dark row text-white g-0 p-4 justify-content-center" style="height: 100vh;">
+        <!-- Mobile Part -->
+        <div class="bg-secondary rounded p-3 mobile_div_parent position-relative">
+            <div class="border-bottom p-3 text-white d-flex align-items-center position-relative">
+                <div class="me-auto">Back</div>
+                <div class="position-absolute start-50 translate-middle-x w-25">
+                    <img src="../references/Small_scream.png" alt="Scream"
+                        class="rounded-circle border border-dark mx-auto d-block" width="50%" />
+                </div>
+                <div class="ms-auto">
+                    <a href="file:///Users/kidopan/Documents/daily/PostProject/pages/signUp.html"
+                        class="link-light text-decoration-none">Sign Up?</a>
+                </div>
+            </div>
+            <div class="bg-dark rounded m-2 p-4">
+                <div class="d-grid">
+                    <button type="button" class="btn btn-light btn-block m-1">
+                        Continue with Number
+                    </button>
+                </div>
+                <div class="d-grid">
+                    <button type="button" class="btn btn-light btn-block m-1">
+                        Continue with Google
+                    </button>
+                </div>
+            </div>
+            <form class="bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around">
+                <div class="d-flex flex-column">
+                    <input type="text" placeholder="Email or Username..." class="m-2 rounded p-2" />
+                    <input type="password" placeholder="Password..." class="m-2 rounded p-2" />
+                    <div class="form-check m-2">
+                        <input class="form-check-input" type="checkbox" id="iAgree">
+                        <label class="form-check-label" for="iAgree">
+                            I agree
+                        </label>
+                    </div>
+                </div>
+                <div class="d-grid">
+                    <button id="logInBtn" type="button" class="btn btn-light btn-block">
+                        Log In
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- Desktop Part -->
+        <div class="bg-secondary two_div_parent rounded p-4">
+            <div class="row g-0">
+                <div class="col-md-6 p-3 border-end sign_up_divs d-flex justify-content-center">
+                    <div class="w-100 p-5 d-flex align-items-center gap-3">
+                        <img src="../references/Small_scream.png" alt="Scream" class="rounded-circle border border-dark"
+                            width="40%" />
+                        <h3 class="mb-0">Scream</h3>
+                    </div>
+                </div>
+                <div class="col-md-6 p-3 d-flex justify-content-center align-items-center">
+                    <form
+                        class=" w-75 bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around"
+                        method="POST" action="/shop/user-registering">
+                        <div class="d-flex flex-column">
+                            <input type="text" placeholder="Email or Username..." class="m-2 rounded p-2" />
+                            <input type="password" placeholder="Password..." class="m-2 rounded p-2" />
+                            <div class="form-check m-2">
+                                <input class="form-check-input" type="checkbox" id="iAgree">
+                                <label class="form-check-label" for="iAgree">
+                                    I agree
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button id="logInBtnDesktop" type="button" class="btn btn-light btn-block">
+                                Log In
+                            </button>
+                        </div>
+                        <div class="text-center">
+                            <a href="file:///Users/kidopan/Documents/daily/PostProject/pages/signUp.html"
+                                class="link-light text-decoration-none">
+                                Sign up?
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

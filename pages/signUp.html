@@ -30,19 +30,17 @@
         display: none;
       }
 
-      .two_div_parent {
-        display: block;
-        width: 90%;
+      .desktop_div_paretn {
+        min-height: 100vh;
       }
 
-      .sign_up_divs {
-        min-height: 50vh;
+      .name_input {
+        width: 45%;
       }
 
-      .signup_form {
-        min-height: 50vh;
+      .signup_text {
+        font-size: 12px;
       }
-
     }
   </style>
 </head>
@@ -57,7 +55,10 @@
           <img src="../references/Small_scream.png" alt="Scream"
             class="rounded-circle border border-dark mx-auto d-block" width="50%" />
         </div>
-        <div class="ms-auto">Log in</div>
+        <div class="ms-auto">
+          <a href="file:///Users/kidopan/Documents/daily/PostProject/pages/logIn.html"
+            class="link-light text-decoration-none">Log In?</a>
+        </div>
       </div>
       <form class="bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around">
         <div class="d-flex flex-column">
@@ -78,39 +79,54 @@
       </form>
     </div>
     <!-- Desktop Part -->
-    <div class="bg-secondary two_div_parent rounded p-4">
-      <div class="row g-0">
-        <div class="col-md-6 p-3 border-end sign_up_divs d-flex justify-content-center">
-          <div class="w-100 p-5 d-flex align-items-center gap-3">
-            <img src="../references/Small_scream.png" alt="Scream" class="rounded-circle border border-dark"
-              width="40%" />
-            <h3 class="mb-0">Scream</h3>
+    <div class="bg-secondary rounded p-3 desktop_div_parent position-relative d-flex flex-column align-items-center">
+      <div class="bg-dark m-2 px-5 py-2 rounded">
+        <p class="h2">
+          Scream
+        </p>
+      </div>
+      <form class="bg-dark m-2 p-5 w-50 rounded">
+        <div class="border-bottom d-grid">
+          <p class="mx-auto d-block">
+            Create a new account
+          </p>
+        </div>
+        <div class="d-flex flex-column w-100">
+          <div class="d-grid my-3">
+            <input class="d-block rounded py-2 px-4" type="email" placeholder="Enter Email or Number..." />
+          </div>
+          <div class="d-flex my-3 flex-row justify-content-between">
+            <input type="text" placeholder="First Name" class="d-block rounded py-2 px-4 name_input" />
+            <input type="text" placeholder="Last Name" class="d-block rounded py-2 px-4 name_input" />
+          </div>
+          <div class="d-grid my-3">
+            <input class="d-block rounded py-2 px-4" type="text" placeholder="Enter a Username..." />
+          </div>
+          <div class="d-grid my-3">
+            <input class="d-block rounded py-2 px-4" type="password" placeholder="Enter a Password..." />
+          </div>
+          <div class="form-check my-3">
+            <input class="form-check-input" type="checkbox" id="iAgree">
+            <label class="text-white signup_text form-check-label" for="iAgree">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit
+              varius,
+              finibus nulla mollis,
+              commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
+            </label>
+          </div>
+          <div class="d-grid my-3">
+            <button id="signupBtnDesktop" type="button" class="btn btn-light btn-block">
+              Sign Up
+            </button>
+          </div>
+          <div class="text-center">
+            <a href="file:///Users/kidopan/Documents/daily/PostProject/pages/logIn.html"
+              class="link-light text-decoration-none">
+              Already have an account? Log In
+            </a>
           </div>
         </div>
-        <div class="col-md-6 p-3 d-flex justify-content-center align-items-center">
-          <form
-            class=" w-75 bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around"
-            method="POST"
-            action="/shop/user-registering"
-          >
-            <div class="d-flex flex-column">
-              <input type="text" placeholder="Email or Username..." class="m-2 rounded p-2" />
-              <input type="password" placeholder="Password..." class="m-2 rounded p-2" />
-              <div class="form-check m-2">
-                <input class="form-check-input" type="checkbox" id="iAgree">
-                <label class="form-check-label" for="iAgree">
-                  I agree
-                </label>
-              </div>
-            </div>
-            <div class="d-grid">
-              <button id="signupBtnDesktop" type="button" class="btn btn-light btn-block">
-                Sign Up
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
   <script>
@@ -128,7 +144,7 @@
       }, 2000);
     });
 
-    document.getElementById('signupBtnDesktop').addEventListener('click', function() {
+    document.getElementById('signupBtnDesktop').addEventListener('click', function () {
       const btn = this;
 
       btn.innerHTML = `
