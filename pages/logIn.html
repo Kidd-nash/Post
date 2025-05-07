@@ -30,6 +30,10 @@
         .mobile_div_parent {
             display: none;
         }
+
+        .desktop_div_paretn {
+            min-height: 100vh;
+        }
     }
 </style>
 <body>
@@ -71,8 +75,23 @@
                 </div>
                 <div class="d-grid">
                     <button id="signupBtn" type="button" class="btn btn-light btn-block">
-                        Sign Up
+                        Log In
                     </button>
+                </div>
+            </form>
+        </div>
+        <!-- Desktop Part -->
+        <div class="bg-secondary rounded p-3 desktop_div_parent position-relative d-flex flex-column align-items-center">
+            <div class="bg-dark m-2 px-5 py-2 rounded">
+                <p class="h2">
+                    Scream
+                </p>
+            </div>
+            <form class="bg-dark m-2 p-5 w-50 rounded">
+                <div class="border-bottom d-grid">
+                    <p class="mx-auto d-block">
+                        Create a new account
+                    </p>
                 </div>
             </form>
         </div>
