@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Sign Up</title>
+  <title>Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="../references/bootstrap.min.css" rel="stylesheet">
@@ -16,13 +16,40 @@
     .main_div {
         min-height: 100vh;
     }
+
+    .nav_button {
+        background-color: grey;
+    }
+
+    .nav_image {
+        background-color: none;
+    }
+
+    .profile_link {
+        width: 30%;
+    }
 </style>
 <body>
     <div class="container-fluid bg-dark main_div">
         <!-- Mobile Part -->
-         <div class="mobile_div w-100">
-            <div>
-                
+         <div class="mobile_div w-100 text-white">
+            <div class="fixed-top border-bottom d-flex flex-row justify-content-between p-2">
+                <div class="d-flex flex-row">
+                    <button class="nav_button rounded mx-2">
+                        <img src="../references/nav.svg" class="nav_image" />
+                    </button>
+                    <p class="h2 mb-0">
+                        Scream
+                    </p>
+                </div>
+                <div class="w-25 d-flex flex-row justify-content-end">
+                    <button class="rounded">
+                        <img src="../references/search.svg" />
+                    </button>
+                    <a class="d-block profile_link mx-2">
+                        <img class="rounded-circle w-100" src="../references/Small_scream.png">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
