@@ -9,7 +9,8 @@
   <script src="../references/bootstrap.bundle.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <style>
     * {
       font-family: 'Space Mono', monospace;
@@ -56,7 +57,10 @@
           <img src="../references/Small_scream.png" alt="Scream"
             class="rounded-circle border border-dark mx-auto d-block" width="50%" />
         </div>
-        <div class="ms-auto">Log in</div>
+        <div class="ms-auto">
+          <a href="file:///Users/kidopan/Documents/daily/PostProject/pages/logIn.html"
+            class="link-light text-decoration-none">Log In?</a>
+        </div>
       </div>
       <form class="bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around">
         <div class="d-flex flex-column">
@@ -87,11 +91,8 @@
           </div>
         </div>
         <div class="col-md-6 p-3 d-flex justify-content-center align-items-center">
-          <form
-            class=" w-75 bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around"
-            method="POST"
-            action="/shop/user-registering"
-          >
+          <form class=" w-75 bg-dark rounded mobile_signup_form m-2 p-4 d-flex flex-column justify-content-around"
+            method="POST" action="/shop/user-registering">
             <div class="d-flex flex-column">
               <input type="text" placeholder="Email or Username..." class="m-2 rounded p-2" />
               <input type="password" placeholder="Password..." class="m-2 rounded p-2" />
@@ -127,7 +128,7 @@
       }, 2000);
     });
 
-    document.getElementById('signupBtnDesktop').addEventListener('click', function() {
+    document.getElementById('signupBtnDesktop').addEventListener('click', function () {
       const btn = this;
 
       btn.innerHTML = `
