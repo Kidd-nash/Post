@@ -28,12 +28,17 @@
     .profile_link {
         width: 30%;
     }
+
+    .each_post_main_div {
+        border: white solid 2px;
+        min-height: 50vh;
+    }
 </style>
-<body>
-    <div class="container-fluid bg-dark main_div">
+<body class="bg-dark">
+    <div class="container-fluid bg-dark main_div p-0">
         <!-- Mobile Part -->
-         <div class="mobile_div w-100 text-white">
-            <div class="fixed-top border-bottom d-flex flex-row justify-content-between p-2">
+         <div class="mobile_div w-100 text-white p-0">
+            <div class="fixed-top border-bottom d-flex flex-row justify-content-between p-2 bg-dark">
                 <div class="d-flex flex-row">
                     <button class="nav_button rounded mx-2">
                         <img src="../references/nav.svg" class="nav_image" />
@@ -50,6 +55,9 @@
                         <img class="rounded-circle w-100" src="../references/Small_scream.png">
                     </a>
                 </div>
+            </div>
+            <div class="mt-5 mb-5 w-100">
+                <div class="each_post_main_div w-100"></div>
             </div>
             <div class="fixed-bottom border-top d-flex flex-row justify-content-between p-2">
                 <div>
