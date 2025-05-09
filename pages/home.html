@@ -30,8 +30,38 @@
     }
 
     .each_post_main_div {
-        border: white solid 2px;
+        /* border: white solid 2px; */
         min-height: 50vh;
+    }
+
+    .user_part {
+        width: 75%;
+    }
+
+    .user_image_div {
+        width: 17%;
+        /* border: 1px solid white; */
+    }
+
+    .user_image {
+        border: 1px solid white;
+    }
+
+    .user_name, .post_date, .post_views {
+        /* border: 1px solid white; */
+        font-size: 13px;
+    }
+
+    .post_description  {
+        font-size: 11px;
+    }
+
+    .post_div {
+        width: 100%;
+    }
+
+    .post_space {
+        width: 90%;
     }
 </style>
 <body class="bg-dark">
@@ -57,7 +87,40 @@
                 </div>
             </div>
             <div class="mt-5 mb-5 w-100">
-                <div class="each_post_main_div w-100"></div>
+                <div class="each_post_main_div w-100 p-3 border-bottom">
+                    <div class="post_top_part w-100 p-2 d-flex flex-row justify-content-between">
+                        <div class="user_part d-flex flex-row">
+                            <div class="user_image_div">
+                                <img class="rounded-circle w-100 user_image" src="../references/Small_scream.png" />
+                            </div>
+                            <div class="text-white user_name d-grid p-1">
+                                <span class="my-auto d-block">r/A long username</span>
+                            </div>
+                            <div class="text-white post_date d-grid p-1">
+                                <span class="my-auto d-block">00/00/00</span>
+                            </div>
+                            <div class="text-white post_views d-grid p-1">
+                                <span class="my-auto d-block">1000</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="three_dote_button">
+                                <img src="../references/vertical_three_dots.svg" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="post_description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit varius,
+                        finibus nulla mollis,
+                        commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
+                    </div>
+                    <div class="post_div d-grid p-4">
+                        <img class="post_space rounded mx-auto d-block" src="../references/Small_scream.png" />
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
             </div>
             <div class="fixed-bottom border-top d-flex flex-row justify-content-between p-2">
                 <div>
