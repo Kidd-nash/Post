@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../references/bootstrap.min.css" rel="stylesheet">
-  <script src="../references/bootstrap.bundle.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../references/bootstrap.min.css" rel="stylesheet">
+    <script src="../references/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
 <style>
     .main_div {
@@ -47,12 +47,14 @@
         border: 1px solid white;
     }
 
-    .user_name, .post_date, .post_views {
+    .user_name,
+    .post_date,
+    .post_views {
         /* border: 1px solid white; */
         font-size: 13px;
     }
 
-    .post_description  {
+    .post_description {
         font-size: 11px;
     }
 
@@ -63,14 +65,63 @@
     .post_space {
         width: 90%;
     }
+
+    /* Nav Modal */
+
+    .modal.left-side .modal-dialog {
+        position: fixed;
+        margin: 0;
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+        max-width: 70%;
+    }
+
+    .modal.left-side.show .modal-dialog {
+        transform: translateX(0);
+    }
+
+    .modal-dialog-slideout {
+        width: 70%;
+        margin: 0;
+        height: 100%;
+    }
+
+    .modal.left-side .modal-content {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .first_menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .first_menu li {
+        padding: 12px 20px;
+        border-bottom: 1px solid #444;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .first_menu li:hover {
+        background-color: #333;
+    }
 </style>
+
 <body class="bg-dark">
     <div class="container-fluid bg-dark main_div p-0">
         <!-- Mobile Part -->
-         <div class="mobile_div w-100 text-white p-0">
+        <div class="mobile_div w-100 text-white p-0">
             <div class="fixed-top border-bottom d-flex flex-row justify-content-between p-2 bg-dark">
                 <div class="d-flex flex-row">
-                    <button class="nav_button rounded mx-2">
+                    <button type="button" class="nav_button rounded mx-2 btn" data-bs-toggle="modal"
+                        data-bs-target="#myModal">
                         <img src="../references/nav.svg" class="nav_image" />
                     </button>
                     <p class="h2 mb-0">
@@ -84,6 +135,43 @@
                     <a class="d-block profile_link mx-2">
                         <img class="rounded-circle w-100" src="../references/Small_scream.png">
                     </a>
+                </div>
+            </div>
+            <div class="modal left-side fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-slideout">
+                    <div class="modal-content bg-dark text-white">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel">Sidebar Menu</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-3">
+                            <div class="border-bottom text-white">
+                                <ul class="first_menu">
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="mt-5 mb-5 w-100">
@@ -110,7 +198,8 @@
                         </div>
                     </div>
                     <div class="post_description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit varius,
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae
+                        elit varius,
                         finibus nulla mollis,
                         commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
                     </div>
@@ -159,7 +248,8 @@
                         </div>
                     </div>
                     <div class="post_description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit varius,
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae
+                        elit varius,
                         finibus nulla mollis,
                         commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
                     </div>
@@ -200,7 +290,8 @@
                         </div>
                     </div>
                     <div class="post_description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit varius,
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae
+                        elit varius,
                         finibus nulla mollis,
                         commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
                     </div>
@@ -249,4 +340,5 @@
         </div>
     </div>
 </body>
+
 </html>
