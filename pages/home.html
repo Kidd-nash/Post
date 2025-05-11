@@ -13,6 +13,10 @@
         rel="stylesheet">
 </head>
 <style>
+    .desktop_div {
+        display: none;
+    }
+
     .main_div {
         min-height: 100vh;
     }
@@ -111,6 +115,25 @@
 
     .first_menu li:hover {
         background-color: #333;
+    }
+
+    @media only screen and (min-width: 901px) {
+
+        .desktop_div {
+            display: block;
+        }
+
+        .mobile_div {
+            display: none;
+        }
+
+        .top_nav {
+            min-height: 10vh;
+        }
+
+        .top_left_nav {
+            width: 70%;
+        }
     }
 </style>
 
@@ -338,6 +361,13 @@
                         <img src="../references/nav.svg" class="nav_image" />
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Desktop Part -->
+        <div class="desktop_div w-100 text-white p-0">
+            <div class="top_nav fixed-top border-bottom d-flex flex-row justify-content-between">
+                <div class="top_left_nav border"></div>
+                <div class=""></div>
             </div>
         </div>
     </div>
