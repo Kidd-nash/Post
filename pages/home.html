@@ -135,7 +135,7 @@
         }
 
         .top_nav {
-            height: 8vh;
+            height: 50px;
         }
 
         .top_left_nav {
@@ -155,7 +155,7 @@
         }
 
         .body_div {
-            top: 8vh;
+            top: 50px;
             border: 1px solid white;
             position: relative;
         }
@@ -172,6 +172,15 @@
 
         .desktop_right_nav_list li {
             padding: 1vh;
+        }
+
+        .desktop_posts_div {
+            width: 50%;
+            border: 1px solid white;
+        }
+
+        .desktop_posts_icons {
+            width: 10%;
         }
     }
 </style>
@@ -414,7 +423,7 @@
                             <h2 class="p-0 my-auto d-block text-center">Scream</h2>
                         </div>
                     </div>
-                    <div>
+                    <div class="d-flex flex-row justify-content-end">
                         <form class="my-2 mx-5">
                             <input type="text" placeholder="search...">
                             <button type="submit">
@@ -472,7 +481,25 @@
                         </ul>
                     </div>
                 </div>
-                <div></div>
+                <div class="desktop_posts_div">
+                    <div class="desktop_each_post border ">
+                        <div class="w-100 d-flex flex-row justify-content-between">
+                            <div class="w-75 d-flex flex-row">
+                                <img src="../references/Small_scream.png"
+                                    class="desktop_posts_icons rounded-circle border" />
+                                <p class="mx-3 my-2">
+                                    r/a_sample_username
+                                </p>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
             </div>
         </div>
     </div>
