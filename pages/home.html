@@ -2,17 +2,28 @@
 <html lang="en">
 
 <head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="../references/bootstrap.min.css" rel="stylesheet">
-  <script src="../references/bootstrap.bundle.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../references/bootstrap.min.css" rel="stylesheet">
+    <script src="../references/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
 <style>
+    * {
+        /* padding: 0;
+        margin: 0; */
+        font-family: 'Space Mono', monospace;
+        box-sizing: border-box;
+    }
+
+    .desktop_div {
+        display: none;
+    }
+
     .main_div {
         min-height: 100vh;
     }
@@ -47,12 +58,14 @@
         border: 1px solid white;
     }
 
-    .user_name, .post_date, .post_views {
+    .user_name,
+    .post_date,
+    .post_views {
         /* border: 1px solid white; */
         font-size: 13px;
     }
 
-    .post_description  {
+    .post_description {
         font-size: 11px;
     }
 
@@ -63,14 +76,123 @@
     .post_space {
         width: 90%;
     }
+
+    /* Nav Modal */
+
+    .modal.left-side .modal-dialog {
+        position: fixed;
+        margin: 0;
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+        max-width: 70%;
+    }
+
+    .modal.left-side.show .modal-dialog {
+        transform: translateX(0);
+    }
+
+    .modal-dialog-slideout {
+        width: 70%;
+        margin: 0;
+        height: 100%;
+    }
+
+    .modal.left-side .modal-content {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .first_menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .first_menu li {
+        padding: 12px 20px;
+        border-bottom: 1px solid #444;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .first_menu li:hover {
+        background-color: #333;
+    }
+
+    @media only screen and (min-width: 901px) {
+
+        .desktop_div {
+            display: block;
+        }
+
+        .mobile_div {
+            display: none;
+        }
+
+        .top_nav {
+            height: 50px;
+        }
+
+        .top_left_nav {
+            width: 70%;
+        }
+
+        .top_left_nav_brand {
+            width: 30%;
+        }
+
+        .top_left_logo {
+            width: 15%;
+        }
+
+        .top_profile {
+            width: 10%;
+        }
+
+        .body_div {
+            top: 50px;
+            border: 1px solid white;
+            position: relative;
+        }
+
+        .body_nav {
+            width: 17%;
+            min-height: 200px;
+        }
+
+        .desktop_right_nav_list {
+            list-style: none;
+            margin: 16px;
+        }
+
+        .desktop_right_nav_list li {
+            padding: 6px;
+        }
+
+        .desktop_posts_div {
+            width: 50%;
+            border: 1px solid white;
+        }
+
+        .desktop_posts_icons {
+            width: 10%;
+        }
+    }
 </style>
+
 <body class="bg-dark">
     <div class="container-fluid bg-dark main_div p-0">
         <!-- Mobile Part -->
-         <div class="mobile_div w-100 text-white p-0">
+        <div class="mobile_div w-100 text-white p-0">
             <div class="fixed-top border-bottom d-flex flex-row justify-content-between p-2 bg-dark">
                 <div class="d-flex flex-row">
-                    <button class="nav_button rounded mx-2">
+                    <button type="button" class="nav_button rounded mx-2 btn" data-bs-toggle="modal"
+                        data-bs-target="#myModal">
                         <img src="../references/nav.svg" class="nav_image" />
                     </button>
                     <p class="h2 mb-0">
@@ -84,6 +206,43 @@
                     <a class="d-block profile_link mx-2">
                         <img class="rounded-circle w-100" src="../references/Small_scream.png">
                     </a>
+                </div>
+            </div>
+            <div class="modal left-side fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-slideout">
+                    <div class="modal-content bg-dark text-white">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel">Sidebar Menu</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-3">
+                            <div class="border-bottom text-white">
+                                <ul class="first_menu">
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+
+                                    <li>
+                                        <a>Feature</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="mt-5 mb-5 w-100">
@@ -110,7 +269,60 @@
                         </div>
                     </div>
                     <div class="post_description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit varius,
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae
+                        elit varius,
+                        finibus nulla mollis,
+                        commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
+                    </div>
+                    <div class="post_div d-grid p-4">
+                        <a>
+                            <img class="post_space rounded mx-auto d-block" src="../references/Small_scream.png" />
+                        </a>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <div>
+                            <button>
+                                <img src="../references/upvote.svg" />
+                            </button>
+                            <button>
+                                <img src="../references/downvote.svg" />
+                            </button>
+                            <button>
+                                <img src="../references/comment.svg" />
+                            </button>
+                        </div>
+                        <div>
+                            <button>
+                                <img src="../references/share.svg" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="each_post_main_div w-100 p-3 border-bottom">
+                    <div class="post_top_part w-100 p-2 d-flex flex-row justify-content-between">
+                        <div class="user_part d-flex flex-row">
+                            <div class="user_image_div">
+                                <img class="rounded-circle w-100 user_image" src="../references/Small_scream.png" />
+                            </div>
+                            <div class="text-white user_name d-grid p-1">
+                                <span class="my-auto d-block">r/A long username</span>
+                            </div>
+                            <div class="text-white post_date d-grid p-1">
+                                <span class="my-auto d-block">00/00/00</span>
+                            </div>
+                            <div class="text-white post_views d-grid p-1">
+                                <span class="my-auto d-block">1000</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="three_dote_button">
+                                <img src="../references/vertical_three_dots.svg" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="post_description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae
+                        elit varius,
                         finibus nulla mollis,
                         commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
                     </div>
@@ -151,48 +363,8 @@
                         </div>
                     </div>
                     <div class="post_description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit varius,
-                        finibus nulla mollis,
-                        commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
-                    </div>
-                    <div class="post_div d-grid p-4">
-                        <img class="post_space rounded mx-auto d-block" src="../references/Small_scream.png" />
-                    </div>
-                    <div class="d-flex flex-row justify-content-between">
-                        <div>
-                            <button>Upvote</button>
-                            <button>Downvote</button>
-                            <button>Comment</button>
-                        </div>
-                        <div>
-                            <button>Share</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="each_post_main_div w-100 p-3 border-bottom">
-                    <div class="post_top_part w-100 p-2 d-flex flex-row justify-content-between">
-                        <div class="user_part d-flex flex-row">
-                            <div class="user_image_div">
-                                <img class="rounded-circle w-100 user_image" src="../references/Small_scream.png" />
-                            </div>
-                            <div class="text-white user_name d-grid p-1">
-                                <span class="my-auto d-block">r/A long username</span>
-                            </div>
-                            <div class="text-white post_date d-grid p-1">
-                                <span class="my-auto d-block">00/00/00</span>
-                            </div>
-                            <div class="text-white post_views d-grid p-1">
-                                <span class="my-auto d-block">1000</span>
-                            </div>
-                        </div>
-                        <div>
-                            <button class="three_dote_button">
-                                <img src="../references/vertical_three_dots.svg" />
-                            </button>
-                        </div>
-                    </div>
-                    <div class="post_description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae elit varius,
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec est eros. Curabitur vitae
+                        elit varius,
                         finibus nulla mollis,
                         commodo quam. Nam bibendum velit sit amet nisl sollicitudin, eu ullamcorper.
                     </div>
@@ -211,10 +383,21 @@
                     </div>
                 </div>
             </div>
-            <div class="fixed-bottom border-top d-flex flex-row justify-content-between p-2">
+            <div class="fixed-bottom border-top d-flex flex-row justify-content-between p-2 bg-dark">
                 <div>
                     <button class="nav_button rounded mx-2">
                         <img src="../references/nav.svg" class="nav_image" />
+                    </button>
+                </div>
+                <div>
+                    <button class="nav_button rounded mx-2">
+                        <img src="../references/nav.svg" class="nav_image" />
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="nav_button rounded mx-2" data-bs-toggle="modal"
+                        data-bs-target="#createPostModal">
+                        <img src="../references/create.svg" class="nav_image" />
                     </button>
                 </div>
                 <div>
@@ -227,18 +410,184 @@
                         <img src="../references/nav.svg" class="nav_image" />
                     </button>
                 </div>
-                <div>
-                    <button class="nav_button rounded mx-2">
-                        <img src="../references/nav.svg" class="nav_image" />
-                    </button>
+            </div>
+            <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-dark text-white">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createPostModalLabel">Create a Post</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="postTitle" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="postTitle"
+                                        placeholder="Enter post title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="postContent" class="form-label">Content</label>
+                                    <textarea class="form-control" id="postContent" rows="4"
+                                        placeholder="Write your post..."></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="postImage" class="form-label">Upload Image (optional)</label>
+                                    <input class="form-control" type="file" id="postImage">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Desktop Part -->
+        <div class="desktop_div w-100 text-white p-0">
+            <div class="top_nav fixed-top border-bottom d-flex flex-row justify-content-between">
+                <div class="top_left_nav border d-flex flex-row">
+                    <div class="top_left_nav_brand border px-3 py-2 d-flex flex-row">
+                        <div class="top_left_logo">
+                            <img class="rounded-circle border w-100" src="../references/Small_scream.png" />
+                        </div>
+                        <div class="d-grid">
+                            <h2 class="p-0 my-auto d-block text-center">Scream</h2>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-end">
+                        <form class="my-2 mx-5">
+                            <input type="text" placeholder="search...">
+                            <button type="submit">
+                                <img src="../references/search.svg" />
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-end">
+                    <div>
+                        <button>
+                            <img src="../references/chat.svg" />
+                        </button>
+                    </div>
+                    <div>
+                        <button data-bs-toggle="modal" data-bs-target="#createPostModalDesktop">
+                            <img src="../references/create.svg" /> Create
+                        </button>
+                    </div>
+                    <div>
+                        <button>
+                            <img src="../references/notification.svg" />
+                        </button>
+                    </div>
+                    <div class="top_profile">
+                        <button>
+                            <img src="../references/Small_scream.png" class="w-100" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row body_div">
+                <div class="body_nav border">
+                    <div class="border-bottom">
+                        <ul class="desktop_right_nav_list">
+                            <li>
+                                <a>Feature</a>
+                            </li>
+
+                            <li>
+                                <a>Feature</a>
+                            </li>
+
+                            <li>
+                                <a>Feature</a>
+                            </li>
+
+                            <li>
+                                <a>Feature</a>
+                            </li>
+
+                            <li>
+                                <a>Feature</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="desktop_posts_div">
+                    <div class="desktop_each_post border ">
+                        <div class="w-100 d-flex flex-row justify-content-between">
+                            <div class="w-75 d-flex flex-row">
+                                <img src="../references/Small_scream.png"
+                                    class="desktop_posts_icons rounded-circle border" />
+                                <p class="mx-3 my-2">
+                                    r/a_sample_username
+                                </p>
+                            </div>
+                            <div>
+                                <button class="mx-3 my-2">
+                                    <img src="../references/vertical_three_dots.svg" />
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w-100 border d-grid">
+                            <div class="mx-auto d-block my-3">
+                                <img src="../references/Small_scream.png" />
+                            </div>
+                        </div>
+                        <div class="w-100 d-flex flex-row">
+                            <button class="">
+                                <img src="../references/upvote.svg" />
+                            </button>
+                            <button>
+                                <img src="../references/downvote.svg" />
+                            </button>
+                            <button>
+                                <img src="../references/comment.svg" />
+                            </button>
+                            <button>
+                                <img src="../references/share.svg" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <button class="nav_button rounded mx-2">
-                        <img src="../references/nav.svg" class="nav_image" />
-                    </button>
+
+                </div>
+            </div>
+            <div class="modal fade" id="createPostModalDesktop" tabindex="-1"
+                aria-labelledby="createPostModalDesktopLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content bg-dark text-white">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createPostModalDesktopLabel">Create a Post</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="postTitle" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="postTitle"
+                                        placeholder="Enter post title">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="postContent" class="form-label">Content</label>
+                                    <textarea class="form-control" id="postContent" rows="4"
+                                        placeholder="Write your post..."></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="postImage" class="form-label">Upload Image (optional)</label>
+                                    <input class="form-control" type="file" id="postImage">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
+
 </html>
